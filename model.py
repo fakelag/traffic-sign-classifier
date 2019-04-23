@@ -1,5 +1,5 @@
 from keras.optimizers import Adam
-from keras.models import Model, Sequential, model_from_json
+from keras.models import Model, Sequential, load_model
 from keras.layers import Dense, Flatten, Dropout
 from keras.layers.convolutional import Conv2D, MaxPooling2D
 
@@ -13,12 +13,11 @@ num_classes = 43
 
 def model_save(mdl):
 	""" Saves the model to disk """
-	mdl.save_weights("model.h5")
+	mdl.save("model.h5")
 
-def model_load(mdl):
+def model_load():
 	""" Loads the model from disk """
-	mdl.load_weights("model.h5")
-	return mdl
+	return load_model("model.h5")
 
 def model_create():
 	""" Create a convolutional neural network model (CNN) """

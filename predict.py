@@ -20,8 +20,7 @@ plt.show()
 img = mdl.image_process(img)
 
 # Load the model
-model = mdl.model_create()
-model = mdl.model_load(model)
+model = mdl.model_load()
 
 # Perform prediction
 print("predicted sign: " + str(model.predict_classes(img)))

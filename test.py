@@ -20,8 +20,7 @@ x_test = x_test.reshape(x_test.shape[0], 32, 32, 1)
 y_test = to_categorical(y_test, mdl.num_classes)
 
 # Load the model
-model = mdl.model_create()
-model = mdl.model_load(model)
+model = mdl.model_load()
 
 # Evaluate
 score = model.evaluate(x_test, y_test, verbose=0)
